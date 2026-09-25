@@ -1,1 +1,2 @@
-
+docker run --name lab-app -e DB_HOST=pg-lab -e DB_PORT=5432 -e DB_USER=app -e DB_PASSWORD=changeme -e DB_NAME=visits_db --network app-network -p 8000:8000 -d lab-app
+docker run --name pg-lab -e POSTGRES_USER=app -e POSTGRES_PASSWORD=changeme -e POSTGRES_DB=visits_db --network app-network -d postgres:16
